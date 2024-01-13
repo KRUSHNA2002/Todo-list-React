@@ -23,9 +23,9 @@ const Todo =()=>{
     return(
       
        <div className="container d-flex justify-content-center align-items-center">
-          <div className="col-5 bg-primary my-5">
+          <div className="col-12 col-md-6 bg-primary my-5">
 
-          <div className="col-md-12 my-4 text-center">
+          <div className=" my-4 text-center">
              <input type="text" style={{width:'70%'}}
                name='userName'
                value={todo}   
@@ -39,7 +39,7 @@ const Todo =()=>{
         
           <div className='p-4'>
             
-          <table className='table table-bordered '>
+          <table className='table table-bordered table-responsive '>
               <tbody>
               <tr className='text-center'>
                 <th>Name</th>
