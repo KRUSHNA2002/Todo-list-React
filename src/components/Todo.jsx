@@ -11,21 +11,22 @@ const Todo =()=>{
     const addTodo = () => {
 
       setTodos([...todos, todo])
-      console.log(todos)
 
     }
 
-    const removetodos = () => {
-      
+    const removetodos = (index) => {
+      const newtodos=[...todos];
+      newtodos.splice(index,1);
+      setTodos(newtodos);
     }
 
     return(
       
        <div className="container d-flex justify-content-center align-items-center">
-          <div className="col-5  my-5">
+          <div className="col-5 bg-primary my-5">
 
           <div className="col-md-12 my-4 text-center">
-             <input type="text" style={{width:'60%'}}
+             <input type="text" style={{width:'70%'}}
                name='userName'
                value={todo}   
                onChange={(e) => setTodo(e.target.value)}
@@ -33,24 +34,32 @@ const Todo =()=>{
              />
 
 
-            <button onClick={addTodo}>Add Todo</button>
+            <button className='mx-2' onClick={addTodo}>Add Todo</button>
           </div>  
-
-             <table className='table table-bordered'>
-              <tr>
+        
+          <div className='p-4'>
+            
+          <table className='table table-bordered '>
+              <tbody>
+              <tr className='text-center'>
                 <th>Name</th>
                 <th>Delete</th>
               </tr>
+              </tbody>
              {            
-               todos.map((val)=>{
+               todos.map((val , index)=>{
                 return(
-                   <tr>
+                 <tbody>
+                    <tr key={index} className='text-center'>
                     <td>{val}</td>
-                    <td><button className='btn btn-primary' onChange={(e)=>removetodos(e.target.value)}>Delete</button></td>
+                    <td><button className='btn btn-danger ' onClick={()=>removetodos(index)}>Delete</button></td>
                    </tr>
+                 </tbody>
                 );
               })}
              </table>
+
+          </div>
 
           </div>
        </div>
