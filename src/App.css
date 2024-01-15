@@ -37,3 +37,18 @@
   }
 }
 
+.tasks:hover{
+
+  background-color: rgb(170, 167, 167);
+}
+
+.bgcolor
+{
+  background-color: rgb(187, 183, 183);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px inset;
+}
+.input11 input
+{
+  border: '2px solid black'
+}
